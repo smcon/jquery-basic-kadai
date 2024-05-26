@@ -1,0 +1,282 @@
+/*全体の設定*/
+html {
+  font-size: 10px;
+}
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+li {
+  list-style: none;
+}
+img {
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+/*ハンバーガーメニュー設定*/
+.hamburger {
+  width: 100px;
+  height: 100px;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 30;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.hamburger:hover {
+  opacity: 0.7;
+}
+/* ハンバーガーメニューの線の設定（メニューが閉じている時） */
+.hamburger span {
+  width: 50px;
+  height: 2px ;
+  background: #fff;
+  position: absolute;
+  left: 25px;
+  transition: 0.3s ease-in-out;
+}
+/* 1本目の線の位置を設定 */
+.hamburger span:nth-child(1) {
+  top: 36px;
+}
+/* 2本目の線の位置を設定 */
+.hamburger span:nth-child(2) {
+  top: 50px;
+}
+/* 3本目の線の位置を設定 */
+.hamburger span:nth-child(3) {
+  top: 64px;
+}
+/*
+ハンバーガーメニューの線の設定（メニューが開いている時）
+1本目の線を-45度回転
+*/
+.hamburger.active span:nth-child(1) {
+  top: 47px;
+  left: 25px;
+  background :#fff;
+  transform: rotate(-45deg);
+}
+/* 2本目と3本目は重ねて45度回転 */
+.hamburger.active span:nth-child(2),
+.hamburger.active span:nth-child(3) {
+  top: 47px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+#navi {
+  width: 100%;
+  height: 100vh;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.6s ease, visibility 0.6s ease;
+  visibility: hidden;
+}
+/*ハンバーガーメニューがクリックされた際に、メニューを表示させる。*/
+#navi.active {
+  opacity: 1;
+  visibility: visible;
+}
+#navi .logo {
+  width: 100px;
+  position: absolute;
+  top: 40px;
+  left: 50px;
+}
+#navi .menu {
+  margin: 80px 0 40px 0;
+}
+#navi .menu li {
+  margin-bottom: 20px;
+}
+#navi .menu a {
+  color: #fff;
+  font-weight: bold;
+}
+#navi .btn {
+  width: 250px;
+  border: solid 1px #fff;
+  color: #fff;
+  display: block;
+  font-weight: bold;
+  padding: 15px 0;
+  margin: 0 auto;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+/* ボタンの右と下の線は疑似要素で設定 */
+#navi .btn::after {
+  content: "　";
+  width: 250px;
+  border-right: solid 1px #fff;
+  border-bottom: solid 1px #fff;
+  padding: 15px 0;
+  position: absolute;
+  right: -6px;
+  bottom: -6px;
+}
+#navi .btn:hover {
+  background-color: #fff;
+  color: #ff2a2a;
+}
+/*ここまでハンバーガーメニューの設定*/
+
+#video {
+  width: 100%;
+  height: 100vh;
+}
+#video .bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  width: 177vh;
+  height: 56vw;
+  min-width: 100%;
+  min-height: 100%;
+}
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  color: #fff;
+  font-size: 8rem;
+  text-shadow: 0 0 15px #666;
+}
+/*会社概要　ABOUT US*/
+.section-title {
+  font-size: 5rem;
+}
+.btn {
+  font-size: 2rem;
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid #555;
+  padding: 10px 30px;
+  text-align: center;
+  outline: none;
+  transition: ease .2s;
+  border-radius: 5px;
+}
+.btn span {
+  position: relative;
+  z-index: 3;
+  color: #333;
+}
+.btn:hover span {
+  color: #fff;
+}
+.bgleft:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: skyblue;
+  width: 100%;
+  height: 100%;
+  transition: transform .6s cubic-bezier(0.8, 0, 0.2, 1) 0s;
+  transform: scale(0, 1);
+  transform-origin: right top;
+}
+.bgleft:hover:before {
+  transform-origin: left top;
+  transform: scale(1, 1);
+}
+/*施工実績*/
+.gnavi{
+  display: flex;
+  flex-wrap: wrap;/*スマホ表示折り返し用なのでPCのみなら不要*/
+  margin:0 0 50px 0;
+  list-style: none;
+}
+.gnavi li a{
+  display: block;
+ padding:10px 30px;
+  color: #333;
+  font-size: 2rem;
+}
+.gnavi li{
+  margin-bottom:20px;
+}
+.gnavi li a{
+  /*線の基点とするためrelativeを指定*/
+position: relative;
+}
+.gnavi li a:hover{
+color:#0481A2;
+}
+
+.gnavi li a::after {
+  content: '';
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  /*線の形状*/
+  width: 80%;
+  height: 2px;
+  background:#0481A2;
+  /*アニメーションの指定*/
+  transition: all .3s;
+  transform: scale(0, 1);/*X方向0、Y方向1*/
+  transform-origin: center top;/*上部中央基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li a:hover::after {
+  transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+/*採用情報の編集*/
+.btnchange {
+  position: relative;
+  border: 1px solid #555;
+  padding: 20px;
+  min-width: 210px;
+  font-size: 3rem;
+  border-radius: 25px;
+  display: inline-block;
+  color: #333;
+  outline: none;
+  transition: all .2s;
+  text-align: center;
+}
+.btnchange:hover {
+  background: skyblue;
+  color: #fff;
+}
+.btnchange span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+   transform: translate(-50%, -50%);
+   transition: all .2s;
+   display: block;
+   white-space: nowrap;
+}
+.btnchange span:nth-child(2) {
+  opacity: 0;
+}
+.btnchange:hover span:nth-child(1) {
+  opacity: 0;
+}
+.btnchange:hover span:nth-child(2) {
+  opacity: 1;
+}
